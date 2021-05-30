@@ -1,1 +1,1 @@
-# PrototypeGameShop
+# DemoGameShop
