@@ -1,30 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:demo_game_shop/screens/home/widgets/body.dart';
-import 'package:demo_game_shop/widgets/coustom_bottom_nav_bar.dart';
+import 'package:shop_app/size_config.dart';
+import 'package:shop_app/components/coustom_bottom_nav_bar.dart';
+import 'package:shop_app/enums.dart';
+
+import 'components/body.dart';
 
 class HomeScreen extends StatelessWidget {
+  static String routeName = "/home";
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
-      appBar: buildAppBar(),
       body: Body(),
-      bottomNavigationBar: CustomBottomNavBar(),
-    );
-  }
-
-  AppBar buildAppBar() {
-    return AppBar(
-      title: Text('DemoGameShop'),
-      leading: IconButton(
-        icon: Icon(Icons.search),
-        onPressed: () {},
-      ),
-      actions: [
-        IconButton(
-          icon: Icon(Icons.shopping_cart_outlined),
-          onPressed: () {},
-        ),
-      ],
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
     );
   }
 }
