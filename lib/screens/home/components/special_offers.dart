@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../../size_config.dart';
+import 'package:get/get.dart';
+import 'package:shop_app/size_config.dart';
 import 'section_title.dart';
 
 class SpecialOffers extends StatelessWidget {
@@ -16,7 +16,7 @@ class SpecialOffers extends StatelessWidget {
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: SectionTitle(
-            title: "Special for you",
+            title: "special_offers_title".tr,
             press: () {},
           ),
         ),
@@ -104,7 +104,7 @@ class SpecialOfferCard extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        TextSpan(text: "$numOfBrands Brands")
+                        TextSpan(text: '$numOfBrands ' + "brands".tr)
                       ],
                     ),
                   ),

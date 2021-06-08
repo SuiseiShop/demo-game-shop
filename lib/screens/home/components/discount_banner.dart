@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../../size_config.dart';
+import 'package:get/get.dart';
+import 'package:shop_app/size_config.dart';
 
 class DiscountBanner extends StatelessWidget {
   const DiscountBanner({
@@ -25,9 +25,9 @@ class DiscountBanner extends StatelessWidget {
         TextSpan(
           style: TextStyle(color: Colors.white),
           children: [
-            TextSpan(text: "A Summer Surpise\n"),
+            TextSpan(text: "disccount_title".tr + "\n"),
             TextSpan(
-              text: "Cashback 20%",
+              text: "disccount_text".tr,
               style: TextStyle(
                 fontSize: getProportionateScreenWidth(24),
                 fontWeight: FontWeight.bold,

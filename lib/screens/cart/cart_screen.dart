@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shop_app/models/Cart.dart';
 
 import 'components/body.dart';
@@ -20,11 +21,11 @@ class CartScreen extends StatelessWidget {
       title: Column(
         children: [
           Text(
-            "Your Cart",
+            'cart_screen_title'.tr,
             style: TextStyle(color: Colors.black),
           ),
           Text(
-            "${demoCarts.length} items",
+            '${demoCarts.length} ' + 'items'.tr,
             style: Theme.of(context).textTheme.caption,
           ),
         ],
