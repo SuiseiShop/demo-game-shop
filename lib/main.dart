@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shop_app/translation.dart';
+import 'package:shop_app/translation/app_translation.dart';
 import 'package:shop_app/theme.dart';
 import 'package:shop_app/routes.dart';
 import 'package:shop_app/screens/home/home_screen.dart';
