@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "688568943822",
+    "firebase_url": "https://suiseishop-9f1ad-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "suiseishop-9f1ad",
+    "storage_bucket": "suiseishop-9f1ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688568943822:android:e819dd1d9a0948638cfc9f",
+        "android_client_info": {
+          "package_name": "com.example.shop_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688568943822-g82bbnrbl2kbclvbao25ijo16pp4m949.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_rHjrF84EuRGL4M95aUZXOZ_PJuQFys0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688568943822-g82bbnrbl2kbclvbao25ijo16pp4m949.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
