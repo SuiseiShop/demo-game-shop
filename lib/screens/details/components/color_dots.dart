@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/components/rounded_icon_btn.dart';
-import 'package:shop_app/models/Product.dart';
+import 'package:shop_app/models/product_model.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -11,7 +11,7 @@ class ColorDots extends StatelessWidget {
     @required this.product,
   }) : super(key: key);
 
-  final Product product;
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shop_app/models/Product.dart';
+import 'package:shop_app/models/product_model.dart';
 import 'package:shop_app/screens/details/details_screen.dart';
 
 import '../constants.dart';
@@ -15,7 +15,7 @@ class ProductCard extends StatelessWidget {
   }) : super(key: key);
 
   final double width, aspectRetio;
-  final Product product;
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {

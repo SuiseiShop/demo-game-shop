@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/models/Product.dart';
+import 'package:shop_app/models/product_model.dart';
 import 'components/body.dart';
 import 'components/custom_app_bar.dart';
 
@@ -19,7 +19,7 @@ class DetailsScreen extends StatelessWidget {
 }
 
 class ProductDetailsArguments {
-  final Product product;
+  final ProductModel product;
 
   ProductDetailsArguments({@required this.product});
 }
