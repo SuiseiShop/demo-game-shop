@@ -18,15 +18,17 @@ class Categories extends StatelessWidget {
     //     {"icon": "assets/icons/Discover.svg", "text": "More"},
     //   ];
 
-    return FutureBuilder(
-      future: categoriesProvider.loadCategories(),
-      builder:
-          (BuildContext context, AsyncSnapshot<List<CategoryModel>> snapshot) {
-        if (snapshot.hasData) {
-          final categories = snapshot.data;
-          return Padding(
-            padding: EdgeInsets.all(getProportionateScreenWidth(20)),
-            child: Row(
+    return Padding(
+      padding: EdgeInsets.all(getProportionateScreenWidth(20)),
+      child: FutureBuilder(
+        future: categoriesProvider.loadCategories(),
+        builder: (
+          BuildContext context,
+          AsyncSnapshot<List<CategoryModel>> snapshot,
+        ) {
+          if (snapshot.hasData) {
+            final categories = snapshot.data;
+            return Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: List.generate(
@@ -37,19 +39,16 @@ class Categories extends StatelessWidget {
                   press: () {},
                 ),
               ),
-            ),
-          );
-        } else {
-          return Padding(
-            padding: EdgeInsets.all(getProportionateScreenWidth(20)),
-            child: Center(
+            );
+          } else {
+            return Center(
               child: CircularProgressIndicator(
                 color: kPrimaryColor,
               ),
-            ),
-          );
-        }
-      },
+            );
+          }
+        },
+      ),
     );
   }
 }

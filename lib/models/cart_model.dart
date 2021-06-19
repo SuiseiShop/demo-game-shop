@@ -12,7 +12,7 @@ class CartModel {
 // Demo data for our cart
 
 List<CartModel> demoCarts = [
-  CartModel(product: demoProducts[0], numOfItem: 2),
-  CartModel(product: demoProducts[1], numOfItem: 1),
-  CartModel(product: demoProducts[3], numOfItem: 1),
+  // CartModel(product: demoProducts[0], numOfItem: 2),
+  // CartModel(product: demoProducts[1], numOfItem: 1),
+  // CartModel(product: demoProducts[3], numOfItem: 1),
 ];

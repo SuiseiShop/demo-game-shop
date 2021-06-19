@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shop_app/constants.dart';
+import 'package:shop_app/size_config.dart';
+import 'package:shop_app/providers/products_provider.dart';
 import 'package:shop_app/components/product_card.dart';
 import 'package:shop_app/models/product_model.dart';
-
-import '../../../size_config.dart';
 import 'section_title.dart';
 
 class PopularProducts extends StatelessWidget {
+  final productsProvider = new ProductsProvider();
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -17,24 +20,42 @@ class PopularProducts extends StatelessWidget {
           child: SectionTitle(title: "popular_products_title".tr, press: () {}),
         ),
         SizedBox(height: getProportionateScreenWidth(20)),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              ...List.generate(
-                demoProducts.length,
-                (index) {
-                  if (demoProducts[index].isPopular)
-                    return ProductCard(product: demoProducts[index]);
+        FutureBuilder(
+          future: productsProvider.loadProducts(),
+          builder: (
+            BuildContext context,
+            AsyncSnapshot<List<ProductModel>> snapshot,
+          ) {
+            if (snapshot.hasData) {
+              final products = snapshot.data;
+              products.forEach((element) => print(element.colors.length));
+              return SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    ...List.generate(
+                      products.length,
+                      (index) {
+                        if (products[index].isPopular)
+                          return ProductCard(product: products[index]);
 
-                  return SizedBox
-                      .shrink(); // here by default width and height is 0
-                },
-              ),
-              SizedBox(width: getProportionateScreenWidth(20)),
-            ],
-          ),
-        )
+                        return SizedBox
+                            .shrink(); // here by default width and height is 0
+                      },
+                    ),
+                    SizedBox(width: getProportionateScreenWidth(20)),
+                  ],
+                ),
+              );
+            } else {
+              return Center(
+                child: CircularProgressIndicator(
+                  color: kPrimaryColor,
+                ),
+              );
+            }
+          },
+        ),
       ],
     );
   }

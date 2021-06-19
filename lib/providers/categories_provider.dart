@@ -31,8 +31,8 @@ class CategoriesProvider {
     final List<CategoryModel> categories = [];
 
     if (decodedData == null) return [];
-    decodedData.forEach((id, prod) {
-      final categoryTemp = CategoryModel.fromJson(prod);
+    decodedData.forEach((id, category) {
+      final categoryTemp = CategoryModel.fromJson(category);
       categoryTemp.id = id;
 
       categories.add(categoryTemp);
