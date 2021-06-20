@@ -28,7 +28,6 @@ class PopularProducts extends StatelessWidget {
           ) {
             if (snapshot.hasData) {
               final products = snapshot.data;
-              products.forEach((element) => print(element.colors.length));
               return SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(

@@ -6,7 +6,7 @@ import 'package:shop_app/models/product_model.dart';
 class ProductsProvider {
   final String _url =
       'suiseishop-9f1ad-default-rtdb.europe-west1.firebasedatabase.app';
-  
+
   Future<bool> createProduct(ProductModel product) async {
     final url = Uri.https(_url, 'products.json');
     final resp = await http.post(url, body: productModelToJson(product));
@@ -21,6 +21,14 @@ class ProductsProvider {
     final decodedData = json.decode(resp.body);
 
     return true;
+  }
+
+  Future<ProductModel> getProduct(String id) async {
+    final url = Uri.https(_url, 'products/$id.json');
+    final resp = await http.get(url);
+    final decodedData = json.decode(resp.body);
+
+    return ProductModel.fromJson(decodedData);
   }
 
   Future<List<ProductModel>> loadProducts() async {

@@ -1,18 +1,28 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
-import 'product_model.dart';
+CartModel cartModelFromJson(String str) => CartModel.fromJson(json.decode(str));
+
+String cartModelToJson(CartModel data) => json.encode(data.toJson());
 
 class CartModel {
-  final ProductModel product;
-  final int numOfItem;
+  CartModel({
+    this.id,
+    this.numOfItem,
+    this.productId,
+  });
 
-  CartModel({@required this.product, @required this.numOfItem});
+  String id;
+  String productId;
+  int numOfItem;
+
+  factory CartModel.fromJson(Map<String, dynamic> json) => CartModel(
+        id: json["id"],
+        numOfItem: json["numOfItem"],
+        productId: json["product_id"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "numOfItem": numOfItem,
+        "product_id": productId,
+      };
 }
-
-// Demo data for our cart
-
-List<CartModel> demoCarts = [
-  // CartModel(product: demoProducts[0], numOfItem: 2),
-  // CartModel(product: demoProducts[1], numOfItem: 1),
-  // CartModel(product: demoProducts[3], numOfItem: 1),
-];
