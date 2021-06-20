@@ -27,14 +27,27 @@ class CartProvider {
     return true;
   }
 
-  Future<Map<String, dynamic>> loadCart() async {
+  Future<CartModel> getCartItemByProduct(String productId) async {
+    final cartMap = await loadCart();
+
+    final List<CartModel> cart = cartMap['cart'];
+    if (cart != null) {
+      for (var i = 0; i < cart.length; i++) {
+        if (productId == cart[i].productId) return cart[i];
+      }
+    }
+
+    return null;
+  }
+
+  Future<Map<String, Object>> loadCart() async {
     final url = Uri.https(_url, 'cart.json');
     final resp = await http.get(url);
 
-    final Map<String, dynamic> decodedData = json.decode(resp.body);
+    final decodedData = json.decode(resp.body);
     final List<CartModel> cart = [];
 
-    if (decodedData == null) return <String, dynamic> {};
+    if (decodedData == null) return {};
     decodedData.forEach((id, cartItem) {
       final cartItemTemp = CartModel.fromJson(cartItem);
       cartItemTemp.id = id;
@@ -49,7 +62,7 @@ class CartProvider {
       products.add(prodTemp);
     }
 
-    return <String, dynamic> {
+    return {
       'cart': cart,
       'products': products,
     };

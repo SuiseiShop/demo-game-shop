@@ -7,9 +7,11 @@ import 'package:shop_app/size_config.dart';
 class ColorDots extends StatefulWidget {
   const ColorDots({
     Key key,
+    this.callback,
     @required this.product,
   }) : super(key: key);
 
+  final Function(int) callback;
   final ProductModel product;
 
   @override
@@ -39,6 +41,7 @@ class _ColorDotsState extends State<ColorDots> {
             icon: Icons.remove,
             press: () => setState(() {
               if (numOfItem > 1) numOfItem--;
+              widget.callback(numOfItem);
             }),
           ),
           SizedBox(width: getProportionateScreenWidth(15)),
@@ -49,6 +52,7 @@ class _ColorDotsState extends State<ColorDots> {
             showShadow: true,
             press: () => setState(() {
               if (numOfItem < 99) numOfItem++;
+              widget.callback(numOfItem);
             }),
           ),
         ],

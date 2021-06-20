@@ -7,9 +7,14 @@ import 'package:shop_app/providers/cart_provider.dart';
 import 'components/body.dart';
 import 'components/check_out_card.dart';
 
-class CartScreen extends StatelessWidget {
+class CartScreen extends StatefulWidget {
   static String routeName = "/cart";
 
+  @override
+  _CartScreenState createState() => _CartScreenState();
+}
+
+class _CartScreenState extends State<CartScreen> {
   final cartProvider = new CartProvider();
 
   @override
@@ -21,12 +26,20 @@ class CartScreen extends StatelessWidget {
         AsyncSnapshot<Map<String, dynamic>> snapshot,
       ) {
         if (snapshot.hasData) {
-          final List<CartModel> cart = snapshot.data['cart'];
-          final List<ProductModel> products = snapshot.data['products'];
+          List<CartModel> cart = snapshot.data['cart'];
+          List<ProductModel> products = snapshot.data['products'];
+
           return Scaffold(
             appBar: buildAppBar(context, cart),
-            body: Body(cart: cart, products: products),
-            bottomNavigationBar: CheckoutCard(products: products),
+            body: Body(
+              cart: cart,
+              products: products,
+              callback: (value) => setState(() {
+                cart = value['cart'];
+                products = value['products'];
+              }),
+            ),
+            bottomNavigationBar: CheckoutCard(cart: cart, products: products),
           );
         } else {
           return Scaffold(
@@ -42,6 +55,9 @@ class CartScreen extends StatelessWidget {
   }
 
   AppBar buildAppBar(BuildContext context, List<CartModel> cart) {
+    int numOfItem = 0;
+    if (cart != null) numOfItem = cart.length;
+
     return AppBar(
       title: Column(
         children: [
@@ -50,7 +66,7 @@ class CartScreen extends StatelessWidget {
             style: TextStyle(color: Colors.black),
           ),
           Text(
-            '${cart.length} ' + 'items'.tr,
+            '$numOfItem ' + 'items'.tr,
             style: Theme.of(context).textTheme.caption,
           ),
         ],

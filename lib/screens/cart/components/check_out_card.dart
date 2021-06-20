@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shop_app/models/cart_model.dart';
 import 'package:shop_app/size_config.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/components/default_button.dart';
@@ -9,17 +10,21 @@ import 'package:shop_app/models/product_model.dart';
 class CheckoutCard extends StatelessWidget {
   const CheckoutCard({
     Key key,
+    @required this.cart,
     @required this.products,
   }) : super(key: key);
 
+  final List<CartModel> cart;
   final List<ProductModel> products;
 
   @override
   Widget build(BuildContext context) {
     double totalPrice = 0;
-    products.forEach((product) {
-      totalPrice += product.price;
-    });
+    if (products != null) {
+      for (var i = 0; i < products.length; i++) {
+        totalPrice += (products[i].price * cart[i].numOfItem);
+      }
+    }
 
     return Container(
       padding: EdgeInsets.symmetric(
