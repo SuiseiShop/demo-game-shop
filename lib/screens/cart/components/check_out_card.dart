@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shop_app/size_config.dart';
+import 'package:shop_app/constants.dart';
 import 'package:shop_app/components/default_button.dart';
-
-import '../../../constants.dart';
-import '../../../size_config.dart';
+import 'package:shop_app/models/product_model.dart';
 
 class CheckoutCard extends StatelessWidget {
   const CheckoutCard({
     Key key,
+    @required this.products,
   }) : super(key: key);
+
+  final List<ProductModel> products;
 
   @override
   Widget build(BuildContext context) {
+    double totalPrice = 0;
+    products.forEach((product) {
+      totalPrice += product.price;
+    });
+
     return Container(
       padding: EdgeInsets.symmetric(
         vertical: getProportionateScreenWidth(15),
@@ -69,7 +77,7 @@ class CheckoutCard extends StatelessWidget {
                     text: 'total'.tr + ':\n',
                     children: [
                       TextSpan(
-                        text: "337.15€",
+                        text: '$totalPrice€',
                         style: TextStyle(fontSize: 16, color: Colors.black),
                       ),
                     ],

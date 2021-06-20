@@ -11,8 +11,6 @@ class CartScreen extends StatelessWidget {
   static String routeName = "/cart";
 
   final cartProvider = new CartProvider();
-  List<CartModel> cart = [];
-  List<ProductModel> products = [];
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +21,12 @@ class CartScreen extends StatelessWidget {
         AsyncSnapshot<Map<String, dynamic>> snapshot,
       ) {
         if (snapshot.hasData) {
-          cart = snapshot.data['cart'];
-          products = snapshot.data['products'];
+          final List<CartModel> cart = snapshot.data['cart'];
+          final List<ProductModel> products = snapshot.data['products'];
           return Scaffold(
-            appBar: buildAppBar(context),
+            appBar: buildAppBar(context, cart),
             body: Body(cart: cart, products: products),
-            bottomNavigationBar: CheckoutCard(),
+            bottomNavigationBar: CheckoutCard(products: products),
           );
         } else {
           return Scaffold(
@@ -43,7 +41,7 @@ class CartScreen extends StatelessWidget {
     );
   }
 
-  AppBar buildAppBar(BuildContext context) {
+  AppBar buildAppBar(BuildContext context, List<CartModel> cart) {
     return AppBar(
       title: Column(
         children: [
