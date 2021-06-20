@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/providers/cart_provider.dart';
-import 'package:shop_app/screens/cart/cart_screen.dart';
-import 'package:shop_app/size_config.dart';
+import 'package:suisei_shop/providers/cart_provider.dart';
+import 'package:suisei_shop/screens/cart/cart_screen.dart';
+import 'package:suisei_shop/size_config.dart';
 import 'icon_btn_with_counter.dart';
 import 'search_field.dart';
 

@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:shop_app/models/cart_model.dart';
-import 'package:shop_app/models/product_model.dart';
-import 'package:shop_app/providers/products_provider.dart';
+import 'package:suisei_shop/models/cart_model.dart';
+import 'package:suisei_shop/models/product_model.dart';
+import 'package:suisei_shop/providers/products_provider.dart';
 
 class CartProvider {
   final productsProvider = new ProductsProvider();

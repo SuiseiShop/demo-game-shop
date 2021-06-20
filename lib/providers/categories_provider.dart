@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:shop_app/models/category_model.dart';
+import 'package:suisei_shop/models/category_model.dart';
 
 class CategoriesProvider {
   final String _url =

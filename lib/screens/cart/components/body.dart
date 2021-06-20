@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shop_app/models/product_model.dart';
-import 'package:shop_app/providers/cart_provider.dart';
-import 'package:shop_app/size_config.dart';
-import 'package:shop_app/models/cart_model.dart';
+import 'package:suisei_shop/models/product_model.dart';
+import 'package:suisei_shop/providers/cart_provider.dart';
+import 'package:suisei_shop/size_config.dart';
+import 'package:suisei_shop/models/cart_model.dart';
 import 'cart_card.dart';
 
 class Body extends StatefulWidget {

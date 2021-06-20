@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shop_app/translation/app_translation.dart';
-import 'package:shop_app/theme.dart';
-import 'package:shop_app/routes.dart';
-import 'package:shop_app/screens/home/home_screen.dart';
+import 'package:suisei_shop/translation/app_translation.dart';
+import 'package:suisei_shop/theme.dart';
+import 'package:suisei_shop/routes.dart';
+import 'package:suisei_shop/screens/home/home_screen.dart';
 
 void main() => runApp(MyApp());
 

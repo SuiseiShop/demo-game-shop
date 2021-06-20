@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shop_app/models/product_model.dart';
+import 'package:suisei_shop/models/product_model.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';

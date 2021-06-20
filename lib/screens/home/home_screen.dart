@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/size_config.dart';
-import 'package:shop_app/components/coustom_bottom_nav_bar.dart';
-import 'package:shop_app/enums.dart';
+import 'package:suisei_shop/size_config.dart';
+import 'package:suisei_shop/components/coustom_bottom_nav_bar.dart';
+import 'package:suisei_shop/enums.dart';
 
 import 'components/body.dart';
 

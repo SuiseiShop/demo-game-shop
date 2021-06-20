@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shop_app/models/cart_model.dart';
-import 'package:shop_app/size_config.dart';
-import 'package:shop_app/constants.dart';
-import 'package:shop_app/components/default_button.dart';
-import 'package:shop_app/models/product_model.dart';
+import 'package:suisei_shop/models/cart_model.dart';
+import 'package:suisei_shop/size_config.dart';
+import 'package:suisei_shop/constants.dart';
+import 'package:suisei_shop/components/default_button.dart';
+import 'package:suisei_shop/models/product_model.dart';
 
 class CheckoutCard extends StatelessWidget {
   const CheckoutCard({

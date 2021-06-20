@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shop_app/constants.dart';
-import 'package:shop_app/size_config.dart';
-import 'package:shop_app/providers/products_provider.dart';
-import 'package:shop_app/components/product_card.dart';
-import 'package:shop_app/models/product_model.dart';
+import 'package:suisei_shop/constants.dart';
+import 'package:suisei_shop/size_config.dart';
+import 'package:suisei_shop/providers/products_provider.dart';
+import 'package:suisei_shop/components/product_card.dart';
+import 'package:suisei_shop/models/product_model.dart';
 import 'section_title.dart';
 
 class PopularProducts extends StatelessWidget {

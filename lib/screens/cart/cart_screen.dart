@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shop_app/constants.dart';
-import 'package:shop_app/models/cart_model.dart';
-import 'package:shop_app/models/product_model.dart';
-import 'package:shop_app/providers/cart_provider.dart';
+import 'package:suisei_shop/constants.dart';
+import 'package:suisei_shop/models/cart_model.dart';
+import 'package:suisei_shop/models/product_model.dart';
+import 'package:suisei_shop/providers/cart_provider.dart';
 import 'components/body.dart';
 import 'components/check_out_card.dart';
 

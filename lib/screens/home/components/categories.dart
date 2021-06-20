@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shop_app/constants.dart';
-import 'package:shop_app/models/category_model.dart';
-import 'package:shop_app/size_config.dart';
-import 'package:shop_app/providers/categories_provider.dart';
+import 'package:suisei_shop/constants.dart';
+import 'package:suisei_shop/models/category_model.dart';
+import 'package:suisei_shop/size_config.dart';
+import 'package:suisei_shop/providers/categories_provider.dart';
 
 class Categories extends StatelessWidget {
   final categoriesProvider = new CategoriesProvider();
